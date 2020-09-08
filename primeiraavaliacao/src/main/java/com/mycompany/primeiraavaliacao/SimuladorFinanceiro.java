@@ -43,6 +43,7 @@ public class SimuladorFinanceiro extends javax.swing.JFrame {
         btnBotao = new javax.swing.JButton();
         lblPergunta4 = new javax.swing.JLabel();
         txtTempo = new javax.swing.JTextField();
+        lblDetalhesPlanos = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -68,6 +69,8 @@ public class SimuladorFinanceiro extends javax.swing.JFrame {
             }
         });
 
+        lblPlano.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+
         btnBotao.setBackground(new java.awt.Color(0, 102, 51));
         btnBotao.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btnBotao.setText("SIMULAR");
@@ -80,54 +83,60 @@ public class SimuladorFinanceiro extends javax.swing.JFrame {
 
         lblPergunta4.setText("Quanto tempo seu estabelecimento fica aberto?");
 
+        lblDetalhesPlanos.setBackground(new java.awt.Color(153, 153, 153));
+        lblDetalhesPlanos.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblDetalhesPlanos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(189, 189, 189)
-                                .addComponent(lblTitulo)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel2))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(lblPergunta4)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txtTempo))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addGap(0, 0, Short.MAX_VALUE)
-                                        .addComponent(lblPergunta2, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(txtCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(lblPergunta3, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(lblPergunta1))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGap(0, 0, Short.MAX_VALUE)
-                                                .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addComponent(txtValorSalario))))
-                                .addGap(35, 35, 35)
-                                .addComponent(btnBotao, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(lblEconomia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(lblPlano, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lblGasto, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 521, Short.MAX_VALUE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(90, 90, 90)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 406, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(24, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 513, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(189, 189, 189)
+                                    .addComponent(lblTitulo)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jLabel2))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(lblPergunta4)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(txtTempo))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                            .addGap(0, 0, Short.MAX_VALUE)
+                                            .addComponent(lblPergunta2, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                            .addComponent(txtCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addComponent(lblPergunta3, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(lblPergunta1))
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(layout.createSequentialGroup()
+                                                    .addGap(0, 0, Short.MAX_VALUE)
+                                                    .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(txtValorSalario))))
+                                    .addGap(35, 35, 35)
+                                    .addComponent(btnBotao, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblFlow, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblPlano, javax.swing.GroupLayout.PREFERRED_SIZE, 605, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(lblGasto, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 605, Short.MAX_VALUE)
+                        .addComponent(lblFlow, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblEconomia, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(0, 128, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -139,9 +148,9 @@ public class SimuladorFinanceiro extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(28, 28, 28)
                         .addComponent(jLabel2)))
-                .addGap(5, 5, 5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3)
-                .addGap(41, 41, 41)
+                .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblPergunta1)
                     .addComponent(txtValorSalario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -162,15 +171,17 @@ public class SimuladorFinanceiro extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblPergunta4)
                     .addComponent(txtTempo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addGap(37, 37, 37)
                 .addComponent(lblPlano, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(lblGasto, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(lblFlow, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(11, 11, 11)
+                .addGap(18, 18, 18)
                 .addComponent(lblEconomia, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblDetalhesPlanos, javax.swing.GroupLayout.DEFAULT_SIZE, 93, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -181,7 +192,7 @@ public class SimuladorFinanceiro extends javax.swing.JFrame {
         
         // Extraindo os valores das caixas de texto
         String salariotxt=txtValorSalario.getText(), cargatxt=txtCarga.getText(), 
-                totaltxt=txtTotal.getText(), tempotxt=txtTempo.getText();
+                totaltxt=txtTotal.getText(), tempotxt=txtTempo.getText(); 
         String porcentagemE = "30%", porcentagemP = "20%", porcentagemL = "10%";
         
         // Tranformando todos em doubles (valores, não são inteiros)
@@ -209,6 +220,9 @@ public class SimuladorFinanceiro extends javax.swing.JFrame {
                     contaEconomiaFlow, contaEconomiaFlowAno));
             lblEconomia.setText(String.format("Você economiza até R$%d por mês e R$%d por ano!", 
                     contaValorEconomia, contaValorEconomiaAno));
+            lblDetalhesPlanos.setText("Plano Expert R$150: acesso completo para o negócio grande \n"
+                    + "Tenha acesso à dashboards quinzenais, mensais e diárias, horários ociosos e mapa de calor!\n"
+            +"A média de economia mensal baseado nos clientes que tem esse plano é de 30%++.");
             
         } else if (total<100  && total>16 || tempo > 10 && tempo < 16) {
              contaEconomiaFlow = contaGastoAtual - ((contaGastoAtual/10)*2); 
@@ -221,6 +235,9 @@ public class SimuladorFinanceiro extends javax.swing.JFrame {
                     contaEconomiaFlow, contaEconomiaFlowAno));
             lblEconomia.setText(String.format("Você economiza até R$%d por mês e R$%d por ano!", 
                     contaValorEconomia, contaValorEconomiaAno));
+            lblDetalhesPlanos.setText("Plano plus R$100: alto desempenho para o negócio medio \n"
+                    + "Tenha acesso à dashboards quinzenais e mensais, dias e horários ociosos!\n"
+            +"A média de economia mensal baseado nos clientes que tem esse plano é de 20%.");
         } else {
              contaEconomiaFlow = contaGastoAtual - ((contaGastoAtual/10)*1); 
             contaValorEconomia= contaGastoAtual - contaEconomiaFlow;
@@ -232,7 +249,9 @@ public class SimuladorFinanceiro extends javax.swing.JFrame {
                     contaEconomiaFlow, contaEconomiaFlowAno));
             lblEconomia.setText(String.format("Você economiza até R$%d por mês e R$%d por ano!", 
                     contaValorEconomia, contaValorEconomiaAno));
-            
+            lblDetalhesPlanos.setText("Plano Light R$40: dados que gerenciam seu pequeno negócio \n"
+                    + "Tenha acesso à dashboards mensais e horários ociosos!\n"
+            +"A média de economia mensal baseado nos clientes que tem esse plano é de 10%++.");
         }
              
             lblGasto.setText(String.format("O seu gasto hoje é de R$%d mensal,"
@@ -282,6 +301,7 @@ public class SimuladorFinanceiro extends javax.swing.JFrame {
     private javax.swing.JButton btnBotao;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel lblDetalhesPlanos;
     private javax.swing.JLabel lblEconomia;
     private javax.swing.JLabel lblFlow;
     private javax.swing.JLabel lblGasto;
